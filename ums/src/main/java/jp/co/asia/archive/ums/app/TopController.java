@@ -11,8 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("top")
 public class TopController {
 
-  @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-  public String home() {
-    return "top/menu";
-  }
+    /**
+     * メニュー画面の遷移処理を行う.
+     *
+     * @return メニュー画面名
+     */
+    @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
+    public String home() {
+        return "top/menu";
+    }
 }
