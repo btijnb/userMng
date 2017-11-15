@@ -7,6 +7,17 @@
 <title>registerConfirm</title>
 </head>
 <body>
-確認
+	<h1>確認</h1>
+
+	<form:form action="${pageContext.request.contextPath}/user/register"
+		modelAttribute="registerForm" method="post">
+
+		<form:button>
+			<c:out value="登録" />
+		</form:button>
+	</form:form>
+	<a href="<c:url value="/user/register?redo"/>">
+		<button type="button">やり直し</button>
+	</a>
 </body>
 </html>
