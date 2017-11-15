@@ -2,152 +2,109 @@ package jp.co.asia.archive.ums.app;
 
 public class RegisterForm {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  /**
-   * ユーザーID
-   */
-  private String userId;
+    /**
+     * ユーザーID.
+     */
+    private String userId;
 
-  /**
-   * 誕生日
-   */
-  private String birthDay;
+    /**
+     * 名前.
+     */
+    private String userName;
 
-  /**
-   * 住所
-   */
-  private String address;
+    /**
+     * 生年月日.
+     */
+    private String birthDay;
 
-  /**
-   * 電話番号
-   */
-  private String telNum;
+    /**
+     * 住所.
+     */
+    private String address;
 
-  /**
-   * 権限
-   */
-  private String roles;
+    /**
+     * 電話番号.
+     */
+    private String telNum;
 
-  /**
-   * パスワード
-   */
-  private String password;
+    /**
+     * 権限.
+     */
+    private String[] roles;
 
-  /**
-   * パスワード確認
-   */
-  private String confirmPassword;
+    /**
+     * パスワード.
+     */
+    private String password;
 
-  /**
-   *
-   * @return
-   */
-  public String getUserId() {
-    return userId;
-  }
+    /**
+     * パスワード確認.
+     */
+    private String confirmPassword;
 
-  /**
-   *
-   * @param userId
-   */
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+    public String getUserId() {
+        return userId;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getBirthDay() {
-    return birthDay;
-  }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
-  /**
-   *
-   * @param birthDay
-   */
-  public void setBirthDay(String birthDay) {
-    this.birthDay = birthDay;
-  }
+    public String getUserName() {
+        return userName;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getAddress() {
-    return address;
-  }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  /**
-   *
-   * @param address
-   */
-  public void setAddress(String address) {
-    this.address = address;
-  }
+    public String getBirthDay() {
+        return birthDay;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getTelNum() {
-    return telNum;
-  }
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+    }
 
-  /**
-   *
-   * @param telNum
-   */
-  public void setTelNum(String telNum) {
-    this.telNum = telNum;
-  }
+    public String getAddress() {
+        return address;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getRoles() {
-    return roles;
-  }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-  /**
-   *
-   * @param roles
-   */
-  public void setRoles(String roles) {
-    this.roles = roles;
-  }
+    public String getTelNum() {
+        return telNum;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getPassword() {
-    return password;
-  }
+    public void setTelNum(String telNum) {
+        this.telNum = telNum;
+    }
 
-  /**
-   *
-   * @param password
-   */
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public String[] getRoles() {
+        return roles;
+    }
 
-  /**
-   *
-   * @return
-   */
-  public String getConfirmPassword() {
-    return confirmPassword;
-  }
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
 
-  /**
-   *
-   * @param confirmPassword
-   */
-  public void setConfirmPassword(String confirmPassword) {
-    this.confirmPassword = confirmPassword;
-  }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
 }
