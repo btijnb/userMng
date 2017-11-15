@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="wrapper">
-TOPメニュー
+        <a href="<c:url value="/user/register?form"/>">
+            <button type="button">ユーザ登録</button>
+        </a>
     </div>
 </body>
 </html>

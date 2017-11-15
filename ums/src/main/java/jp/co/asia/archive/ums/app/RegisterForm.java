@@ -40,7 +40,7 @@ public class RegisterForm {
   private String confirmPassword;
 
   /**
-   * 
+   *
    * @return
    */
   public String getUserId() {
@@ -48,7 +48,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param userId
    */
   public void setUserId(String userId) {
@@ -56,7 +56,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getBirthDay() {
@@ -64,7 +64,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param birthDay
    */
   public void setBirthDay(String birthDay) {
@@ -72,7 +72,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getAddress() {
@@ -80,7 +80,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param address
    */
   public void setAddress(String address) {
@@ -88,7 +88,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getTelNum() {
@@ -96,7 +96,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param telNum
    */
   public void setTelNum(String telNum) {
@@ -104,7 +104,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getRoles() {
@@ -112,7 +112,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param roles
    */
   public void setRoles(String roles) {
@@ -120,7 +120,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getPassword() {
@@ -128,7 +128,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param password
    */
   public void setPassword(String password) {
@@ -136,7 +136,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @return
    */
   public String getConfirmPassword() {
@@ -144,7 +144,7 @@ public class RegisterForm {
   }
 
   /**
-   * 
+   *
    * @param confirmPassword
    */
   public void setConfirmPassword(String confirmPassword) {
