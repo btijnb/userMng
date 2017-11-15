@@ -10,31 +10,46 @@
 
 	<form:form action="${pageContext.request.contextPath}/user/register"
 		modelAttribute="registerForm" method="post">
-		<c:out value="ユーザID" />
+		<form:label path="userId">
+			<c:out value="ユーザID" />
+		</form:label> :
 		<form:input path="userId" />
 		<br>
-		<c:out value="名前" />
+		<form:label path="userName">
+			<c:out value="名前" />
+		</form:label> :
 		<form:input path="userName" />
 		<br>
-		<c:out value="生年月日" />
+		<form:label path="birthDay">
+			<c:out value="生年月日" />
+		</form:label> :
 		<form:input path="birthDay" />
 		<br>
-		<c:out value="住所" />
+		<form:label path="address">
+			<c:out value="住所" />
+		</form:label> :
 		<form:input path="address" />
 		<br>
-		<c:out value="電話番号" />
+		<form:label path="telNum">
+			<c:out value="電話番号" />
+		</form:label> :
 		<form:input path="telNum" />
 		<br>
-		<c:out value="権限" />
+		<form:label path="roles">
+			<c:out value="権限" />
+		</form:label> :
 		<form:checkboxes path="roles" items="${checkRoles }" />
 		<br>
-		<c:out value="パスワード" />
+		<form:label path="password">
+			<c:out value="パスワード" />
+		</form:label> :
 		<form:input path="password" />
 		<br>
-		<c:out value="パスワード確認" />
+		<form:label path="confirmPassword">
+			<c:out value="パスワード" />
+		</form:label> :
 		<form:input path="confirmPassword" />
 		<br>
-
 		<form:button name="confirm">
 			<c:out value="登録" />
 		</form:button>
