@@ -7,15 +7,20 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jp.co.asia.archive.ums.app.helper.RegisterHelper;
 
 @Controller
 @RequestMapping("user")
+@SessionAttributes(value = "registerForm")
 public class RegisterController {
 
     @Inject
@@ -26,9 +31,16 @@ public class RegisterController {
      *
      * @return ユーザ登録フォーム
      */
-    @ModelAttribute
+    @ModelAttribute(value="registerForm")
     public RegisterForm setUpForm() {
         return new RegisterForm();
+    }
+
+    @RequestMapping(value = "register", params = "form", method = RequestMethod.GET)
+    public String initializeRegisterForm(SessionStatus sessionStatus) {
+        sessionStatus.setComplete();
+
+        return "redirect:/user/register";
     }
 
     /**
@@ -36,7 +48,7 @@ public class RegisterController {
      *
      * @return ユーザ登録画面名
      */
-    @RequestMapping(value = "register", params = "form")
+    @RequestMapping(value = "register", method = RequestMethod.GET)
     public String form(RegisterForm registerForm, Model model) {
 
         model.addAttribute("registerForm", registerForm);
@@ -51,7 +63,11 @@ public class RegisterController {
      * @return ユーザ登録確認画面名
      */
     @RequestMapping(value = "register", params = "confirm")
-    public String confirm(RegisterForm registerForm, Model model) {
+    public String confirm(@Validated RegisterForm registerForm, BindingResult result, Model model) {
+
+        if (result.hasErrors()) {
+            return "user/registerForm";
+        }
 
         return "user/registerConfirm";
     }
@@ -62,12 +78,9 @@ public class RegisterController {
      * @return ユーザ登録確認画面名
      */
     @RequestMapping(value = "register", params = "redo")
-    public String redo(RegisterForm registerForm, Model model) {
+    public String redo(SessionStatus sessionStatus) {
 
-        model.addAttribute("registerForm", registerForm);
-        model.addAttribute("checkRoles", helper.getCheckRoles());
-
-        return "user/registerForm";
+        return initializeRegisterForm(sessionStatus);
     }
 
     /**

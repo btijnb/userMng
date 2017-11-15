@@ -12,6 +12,48 @@
 	<form:form action="${pageContext.request.contextPath}/user/register"
 		modelAttribute="registerForm" method="post">
 
+		<div>
+			<form:label path="userId">
+				<c:out value="ユーザID" />
+			</form:label>
+			: ${f:h(registerForm.userId)}
+		</div>
+
+		<div>
+			<form:label path="userName">
+				<c:out value="名前" />
+			</form:label>
+			: ${f:h(registerForm.userName)}
+		</div>
+
+		<div>
+			<form:label path="birthDay">
+				<c:out value="生年月日" />
+			</form:label>
+			: ${f:h(registerForm.birthDay)}
+		</div>
+
+		<div>
+			<form:label path="address">
+				<c:out value="住所" />
+			</form:label>
+			: ${f:h(registerForm.address)}
+		</div>
+
+		<div>
+			<form:label path="telNum">
+				<c:out value="電話番号" />
+			</form:label>
+			: ${f:h(registerForm.telNum)}
+		</div>
+
+		<div>
+			<form:label path="roles">
+				<c:out value="権限" />
+			</form:label>
+			: ${fn:join(registerForm.roles, ",")}
+		</div>
+
 		<form:button>
 			<c:out value="登録" />
 		</form:button>

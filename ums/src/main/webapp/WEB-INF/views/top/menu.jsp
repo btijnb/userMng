@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <a href="<c:url value="/user/register?form"/>">
+        <a href="<c:url value="/user/register"/>">
             <button type="button">ユーザ登録</button>
         </a>
     </div>
