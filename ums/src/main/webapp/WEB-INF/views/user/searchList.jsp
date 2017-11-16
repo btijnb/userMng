@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-${checklist}
+${searchForm.userId}<br>
+${searchForm.userName}<br>
+${searchForm.birthDay}<br>
+${searchForm.address}<br>
+${searchForm.telNum}<br>
+${searchForm.roles}<br>
+${searchForm.state}
 
 <!--TODO 検索結果リスト-->
 
