@@ -5,6 +5,8 @@ package jp.co.asia.archive.ums.app;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +26,11 @@ public class RegisterController {
 
     @Inject
     RegisterHelper helper;
+
+    /**
+     * ロガー
+     */
+    private static final Logger logger = LoggerFactory.getLogger(RegisterController.class);
 
     /**
      * ユーザ登録フォームの初期化.
@@ -50,7 +57,7 @@ public class RegisterController {
 
     /**
      * ユーザ登録画面に遷移処理.
-     *
+     *https://alm2criad-sdwb.x-network.jp/trac/teraj2v/newticket
      * @param registerForm ユーザ登録Formオブジェクト
      * @param model Modelオブジェクト
      * @return 遷移先の画面名
@@ -60,6 +67,8 @@ public class RegisterController {
 
         model.addAttribute("registerForm", registerForm);
         model.addAttribute("checkRoles", helper.getCheckRoles());
+
+        logger.debug("■■■■■■■■■initializeRegisterForm");
 
         return "user/registerForm";
     }
