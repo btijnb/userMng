@@ -57,7 +57,7 @@ public class RegisterController {
 
     /**
      * ユーザ登録画面に遷移処理.
-     *https://alm2criad-sdwb.x-network.jp/trac/teraj2v/newticket
+     *
      * @param registerForm ユーザ登録Formオブジェクト
      * @param model Modelオブジェクト
      * @return 遷移先の画面名
