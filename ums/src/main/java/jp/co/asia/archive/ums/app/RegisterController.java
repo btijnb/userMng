@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jp.co.asia.archive.ums.app.helper.RegisterHelper;
 
@@ -31,11 +30,17 @@ public class RegisterController {
      *
      * @return ユーザ登録フォーム
      */
-    @ModelAttribute(value="registerForm")
+    @ModelAttribute(value = "registerForm")
     public RegisterForm setUpForm() {
         return new RegisterForm();
     }
 
+    /**
+     * セッション初期化.
+     *
+     * @param sessionStatus SessionStatusオブジェクト
+     * @return 遷移先の画面名
+     */
     @RequestMapping(value = "register", params = "form", method = RequestMethod.GET)
     public String initializeRegisterForm(SessionStatus sessionStatus) {
         sessionStatus.setComplete();
@@ -46,7 +51,9 @@ public class RegisterController {
     /**
      * ユーザ登録画面に遷移処理.
      *
-     * @return ユーザ登録画面名
+     * @param registerForm ユーザ登録Formオブジェクト
+     * @param model Modelオブジェクト
+     * @return 遷移先の画面名
      */
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public String form(RegisterForm registerForm, Model model) {
@@ -60,7 +67,10 @@ public class RegisterController {
     /**
      * ユーザ登録確認画面に遷移処理.
      *
-     * @return ユーザ登録確認画面名
+     * @param registerForm ユーザ登録Formオブジェクト
+     * @param result BindingResultオブジェクト
+     * @param model Modelオブジェクト
+     * @return 遷移先の画面名
      */
     @RequestMapping(value = "register", params = "confirm")
     public String confirm(@Validated RegisterForm registerForm, BindingResult result, Model model) {
@@ -75,7 +85,8 @@ public class RegisterController {
     /**
      * ユーザ登録画面に遷移.
      *
-     * @return ユーザ登録確認画面名
+     * @param sessionStatus SessionStatusオブジェクト
+     * @return 遷移先の画面名
      */
     @RequestMapping(value = "register", params = "redo")
     public String redo(SessionStatus sessionStatus) {
@@ -86,17 +97,20 @@ public class RegisterController {
     /**
      * ユーザ登録.
      *
-     * @return ユーザ登録完了画面にリダイレクト
+     * @param registerForm ユーザ登録Formオブジェクト
+     * @param model Modelオブジェクト
+     * @return 遷移先の画面名
      */
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String register(RegisterForm registerForm, Model model, RedirectAttributes redirectAttributes) {
+    public String register(RegisterForm registerForm, Model model) {
         return "redirect:/user/register?finish";
     }
 
     /**
      * ユーザ登録完了.
      *
-     * @return ユーザ登録完了画面名
+     * @param model Modelオブジェクト
+     * @return 遷移先の画面名
      */
     @RequestMapping(value = "register", params = "finish")
     public String finish(Model model) {
