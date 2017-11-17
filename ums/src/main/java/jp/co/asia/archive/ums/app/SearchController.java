@@ -1,13 +1,12 @@
 package jp.co.asia.archive.ums.app;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("search")
+@RequestMapping("user")
 public class SearchController {
 
   /**
@@ -15,47 +14,36 @@ public class SearchController {
    *
    * @return 検索フォーム画面名
    */
-  @RequestMapping(value = "form", method = RequestMethod.GET)
-  public String form(Model model1) {
+  @RequestMapping(value = "search", method = RequestMethod.GET)
+  public ModelAndView searchForm(Form form) { //QUESTION formもCommand Object?
 
     //TODO form model関連実装
 
-    String checkform = "これ出たらform成功";
-    model1.addAttribute("checkform", checkform);
+    String checkForm = "これ出たらform成功";
 
-    return "user/searchForm";
+    ModelAndView mav = new ModelAndView();
+    mav.addObject("form", form);
+    mav.addObject("checkForm", checkForm);
+    mav.setViewName("user/searchForm");
+    return mav;
   }
-
-  //    /**
-  //     * 条件に合うユーザデータリスト出力処理.
-  //     * @return ModelAndViewオブジェクト（checklistオブジェクト、ユーザリスト画面名）
-  //     */
-  //    @RequestMapping(value="list", method = RequestMethod.GET)
-  //    public ModelAndView modelAndView(){
-  //
-  //    		//TODO list model関連実装
-  //
-  //    		ModelAndView mv = new ModelAndView();
-  //    		mv.addObject("checklist", "これ出たらlist成功");
-  //    		mv.setViewName("user/searchList");
-  //    		return mv;
-  //
-  //    }
 
   /**
    * 条件に合うユーザデータリスト出力処理.
    *
-   * @return ModelAndViewオブジェクト（searchFormオブジェクト、ユーザ検索結果画面名）
+   * @return ModelAndView //MEMO 使用者(プログラマー)がソース見て分かるような部分は、このくらいで書いていい
    */
   //データ渡し実験用URL: http://localhost:8080/ums/search/list?userId=a&userName=a&birthDay=a&address=a&telNum=a&roles=a&state=a
-  @RequestMapping(value = "list", method = RequestMethod.GET)
-  public ModelAndView modelAndView(SearchForm searchForm) {
+  @RequestMapping(value = "search", method = RequestMethod.GET) //TODO 後でPOSTに変更予定
+  public ModelAndView searchList() {
 
     //TODO list model関連実装
 
-    ModelAndView mv = new ModelAndView();
-    mv.addObject("searchForm", searchForm);
-    mv.setViewName("user/searchList");
-    return mv;
+    String checkList = "これ出たらlist成功";
+
+    ModelAndView mav2 = new ModelAndView();
+    mav2.addObject("checkList", checkList);
+    mav2.setViewName("user/searchList");
+    return mav2;
   }
 }

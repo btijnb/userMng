@@ -78,5 +78,7 @@ public class SearchForm { //MEMO RegisterForm.javaとは別途のファイル
 
   public void setState(String state) {
     this.state = state;
+
+    System.out.println("test"); //実際に使われるメソッドの中にこれを書く
   }
 }
