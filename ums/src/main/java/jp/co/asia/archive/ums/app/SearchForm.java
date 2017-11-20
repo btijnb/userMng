@@ -19,7 +19,7 @@ public class SearchForm { //MEMO RegisterForm.javaとは別途のファイル
   private String telNum;
 
   /** 権限. */
-  private String[] roles; //QUESTION 配列？
+  private String[] roles; //MEMO 検索処理では文字列でいいです。登録画面では管理者、ユーザーのチェック項目があるので文字列の配列にしています。
 
   /** 状態 */
   private String state;

@@ -15,7 +15,7 @@ public class SearchController {
    * @return 検索フォーム画面名
    */
   @RequestMapping(value = "search", method = RequestMethod.GET)
-  public ModelAndView searchForm(Form form) { //QUESTION formもCommand Object?
+  public ModelAndView searchForm(Form form) { //MEMO 画面のformタグ中の要素をControllerで受け取ります。
 
     //TODO form model関連実装
 

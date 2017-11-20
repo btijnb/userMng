@@ -3,7 +3,7 @@ create database ums character set utf8 collate utf8_general_ci;
 use ums;
 
 create table t_user(
-	user_id varchar(20) not null primary key, /*QUESTION varcharの20って何だろう*/
+	user_id varchar(20) not null primary key, /*MEMO variable length QUESTION 20*/
     name varchar(20) not null,
     birth varchar(20) not null,
     address varchar(20) not null,
