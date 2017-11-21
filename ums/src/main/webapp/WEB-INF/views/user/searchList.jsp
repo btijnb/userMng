@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${checklist}
+${checkList}
 
 <!--TODO 検索結果リスト-->
 

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${checkform}
+${checkForm}
 
 <!--TODO 検索フォーム-->
 
