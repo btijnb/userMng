@@ -1,7 +1,8 @@
 package jp.co.asia.archive.ums.app;
 
 public class SearchForm { //MEMO RegisterForm.javaとは別途のファイル
-  //QUESTION これは何に使われるんだろう　private static final long serialVersionUID = 1L;
+  //QUESTION これは何に使われるんだろう　ANSWER http://ktko.tistory.com/133
+	//private static final long serialVersionUID = 1L;
 
   /** ユーザーID. */
   private String userId;

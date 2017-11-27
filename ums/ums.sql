@@ -14,4 +14,5 @@ create table t_user(
 );
 
 insert into t_user values('0001', 'apple', '1991/1/1', '東京都', '031112322', '1234', 'ACTV', '6/2/17 14:29');
+insert into t_user values('a', 'a', 'a', 'a', 'a', 'a', 'a', 'a');
 

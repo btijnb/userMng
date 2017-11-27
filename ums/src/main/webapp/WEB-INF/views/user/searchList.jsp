@@ -27,13 +27,13 @@
 		  
 		<c:forEach items="${list}" var="list">
 			<tr>
-				<td>${list.user_id}</td>
-				<td>${list.name}</td>
-				<td>${list.birth}</td>
-				<td>${list.address}</td>
-				<td>${list.pn}</td>
-				<td>${list.status}</td>
-				<td>${list.updated}</td>				
+				<td>${list.user_id2}</td>
+				<td>${list.name2}</td>
+				<td>${list.birth2}</td>
+				<td>${list.address2}</td>
+				<td>${list.pn2}</td>
+				<td>${list.status2}</td>
+				<td>${list.updated2}</td>				
 			</tr>
 		</c:forEach>
 
