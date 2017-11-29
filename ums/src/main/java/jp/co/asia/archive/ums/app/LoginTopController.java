@@ -1,6 +1,5 @@
 package jp.co.asia.archive.ums.app;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginTopController {
-
 	
      @RequestMapping(value = "/login", params="form", method = RequestMethod.GET)
       public ModelAndView loginForm() { 

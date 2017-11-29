@@ -1,7 +1,6 @@
 <%@include file="/WEB-INF/views/common/header.jsp"%>
 
 <!-- TODO validation機能実装 -->
-
 <div align="center">
 <form action="${pageContext.request.contextPath}/user/register" method="get"> <!-- FIXME post修正 -->
 	<table border="0">
@@ -53,6 +52,5 @@
 	<input type="submit" name="confirm" value="登録"/>
 </form>
 </div>
-
 
 <%@include file="/WEB-INF/views/common/footer.jsp"%>
