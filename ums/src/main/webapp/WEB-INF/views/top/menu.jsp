@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>TOP</title>
-<link rel="stylesheet"
-    href="${pageContext.request.contextPath}/resources/app/css/styles.css">
-</head>
-<body>
-    <div id="wrapper">
-        <a href="<c:url value="/user/register?form"/>">
-            <button type="button">ユーザ登録</button>
-        </a>
-    </div>
-</body>
-</html>
+<%@include file="/WEB-INF/views/common/header.jsp"%>
+
+<center>
+<input type="button" name="form" onclick="location.href='${pageContext.request.contextPath}/user/register'" value="登録"/> <!-- MEMO location.href絶対入れること -->
+<input type="button" onclick="location.href='${pageContext.request.contextPath}/user/search2'" value="検索" />
+</center>
+
+<%@include file="/WEB-INF/views/common/footer.jsp"%>
