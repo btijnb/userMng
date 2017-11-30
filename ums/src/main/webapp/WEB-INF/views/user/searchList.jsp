@@ -1,20 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>掲示板リスト</title>
-</head>
-<body>
+<%@include file="/WEB-INF/views/common/header.jsp"%>
+
 <div align="center">
-	<h2>掲示板リスト</h2>
-	<hr width="400" color="red"/>
-	
+
+<!--  TODO ページめくるhyperlink -->
+<!--  TODO 現在ページ位置表示 -->
+
 	<table border="1" cellpadding="0" cellspacing="0" width="500">
 		<tr>
+			<td>選択</td>
 			<td>ユーザーID</td>     <!-- パスワードは出力しない -->
 			<td>名前</td>
 			<td>生年月日</td>
@@ -27,6 +20,7 @@
 		  
 		<c:forEach items="${list}" var="list">
 			<tr>
+				<td><form action="#" method="get"></form><input type="radio" name="choose" value="${list.user_id2}"></form></td>
 				<td>${list.user_id2}</td>
 				<td>${list.name2}</td>
 				<td>${list.birth2}</td>
@@ -36,9 +30,16 @@
 				<td>${list.updated2}</td>				
 			</tr>
 		</c:forEach>
+	</table>	<br>
+	
+<form action="${pageContext.request.contextPath}/user/update" method="get">
+	<input type="submit" name="formUserId" value="更新" /><!-- FIXME form&userId=xyzに -->
+</form>
 
-	</table>	
+<form action="${pageContext.request.contextPath}/user/delete" method="get">
+	<input type="submit" name="formUserId" value="削除" /><!-- FIXME form&userId=xyzに -->
+</form>
 
 </div>
-</body>
-</html>
+
+<%@include file="/WEB-INF/views/common/footer.jsp"%>

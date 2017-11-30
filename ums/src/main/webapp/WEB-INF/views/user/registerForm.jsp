@@ -1,5 +1,7 @@
 <%@include file="/WEB-INF/views/common/header.jsp"%>
 
+<!-- TODO validation機能実装 -->
+
 <div align="center">
 <form action="${pageContext.request.contextPath}/user/register" method="get"> <!-- FIXME post修正 -->
 	<table border="0">

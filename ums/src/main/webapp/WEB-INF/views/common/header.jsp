@@ -10,11 +10,11 @@
 
 <div align="left">
 ユーザー管理システム
-<button type="button" name="goToMenu" onclick="#">トップページへ</button>
+<input type="button" onclick="location.href='${pageContext.request.contextPath}/top'" value="トップページへ" />
 </div>
 
 <div align="right">
 username ログイン中
-<button type="button" name="logout" onclick="#">ログアウト</button>
+<button name="logout" onclick="#">ログアウト</button>
 </div>
 <hr>

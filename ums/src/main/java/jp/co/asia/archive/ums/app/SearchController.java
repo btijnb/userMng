@@ -22,13 +22,10 @@ public class SearchController {
      *
      * @return 検索フォーム画面名
      */
-      @RequestMapping(value = "/search2", method = RequestMethod.GET)
-      public ModelAndView searchForm(Form form) { //MEMO 画面のformタグ中の要素をControllerで受け取ります。
+      @RequestMapping(value = "/search", params="form", method = RequestMethod.GET)
+      public ModelAndView searchForm() {
     	  		
-    	
-    	  String formName= form.getForm();
     	  ModelAndView mav=new ModelAndView();
-    	  mav.addObject("formName", formName);
     	  mav.setViewName("user/searchForm");
     	  return mav;
       //return "user/searchForm";
