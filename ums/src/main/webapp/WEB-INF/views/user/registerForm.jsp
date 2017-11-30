@@ -5,27 +5,27 @@
 	<table border="0">
 		<tr>
 			<td align="right">ユーザーID:</td>
-			<td><input type="text" name="userId" /></td>
+			<td><input type="text" name="userId" value=""/></td>
 		</tr>
 
 		<tr>
 			<td align="right">名前:</td>
-			<td><input type="text" name="username" /></td>
+			<td><input type="text" name="username" value=""/></td>
 		</tr>
 
 		<tr>
 			<td align="right">生年月日:</td>
-			<td><input type="text" name="birthDay" /></td>
+			<td><input type="text" name="birthDay" value=""/></td>
 		</tr>
 		
 		<tr>
 			<td align="right">住所:</td>
-			<td><input type="text" name="address" /></td>
+			<td><input type="text" name="address" value=""/></td>
 		</tr>
 		
 		<tr>
 			<td align="right">電話番号:</td>
-			<td><input type="text" name="tenlNum" /></td>
+			<td><input type="text" name="telNum" value=""/></td>
 		</tr>						
 
 		<tr>

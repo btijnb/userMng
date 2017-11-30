@@ -1,9 +1,11 @@
 package jp.co.asia.archive.ums.app;
 
 
-import java.lang.ProcessBuilder.Redirect;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,7 +26,6 @@ public class RegisterController {
 
       @RequestMapping(value = "/register", params="confirm", method = RequestMethod.GET) //FIXME POSTに修正
       public String registerConfirm() {
-
         return "user/registerConfirm";
       }          
 

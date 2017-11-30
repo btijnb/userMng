@@ -1,7 +1,6 @@
 <%@include file="/WEB-INF/views/common/header.jsp"%>
 
 <div align="center">
-<form action="${pageContext.request.contextPath}/user/register" method="get"> <!-- FIXME POSTに修正 -->
 	<table border="0">
 		<tr>
 			<td align="right">ユーザーID:</td>
@@ -25,7 +24,7 @@
 		
 		<tr>
 			<td align="right">電話番号:</td>
-			<td>${tenlNum}</td>
+			<td>${telNum}</td>
 		</tr>						
 
 		<tr>
@@ -34,9 +33,11 @@
 		</tr>
 				
 	</table>
+
+<form action="${pageContext.request.contextPath}/user/register" method="get"> <!-- FIXME POSTに修正 -->
 	
 	<input type="submit" value="確認"/>
-	<input type="button" name="redo" onclick="location.href='${pageContext.request.contextPath}/user/register'" value="やり直し" />
+	<input type="submit" name="redo" value="やり直し" />
 		<!-- FIXME やり直しボタンをPOSTに -->
 		<!-- QUESTION 表示された値を、戻ったフォームページに自動的に表示されるようにするには？　MEMO redirectとforwardの違い：JSP本 p186 -->
 		
