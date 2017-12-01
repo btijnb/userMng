@@ -281,6 +281,7 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>5.1.40</version><!--$NO-MVN-MAN-VER$-->
 		</dependency>
+
 		
     </dependencies>
 
