@@ -2,6 +2,8 @@ package jp.co.asia.archive.ums.app;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import jp.co.asia.archive.ums.domain.service.ListCmd;
 import jp.co.asia.archive.ums.domain.service.UmsCmd;
+import jp.co.asia.archive.ums.template.StaticTemplate;
 
 @Controller
 @RequestMapping("/user")
@@ -17,6 +20,14 @@ public class SearchController {
 
   UmsCmd cmd = null;
 
+	private JdbcTemplate template;
+
+	@Autowired 
+	public void setTemplate(JdbcTemplate template){ 
+		this.template=template;
+		StaticTemplate.template=this.template;
+	}
+	
     /**
      * 検索フォームへ遷移
      *
