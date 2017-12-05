@@ -1,12 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-ユーザ登録画面
-</body>
-</html>
+<%@include file="/WEB-INF/views/common/header.jsp"%>
+
+<!-- TODO validation機能実装 -->
+
+<div align="center">
+<form action="${pageContext.request.contextPath}/user/register" method="get"> <!-- FIXME post修正 -->
+	<table border="0">
+		<tr>
+			<td align="right">ユーザーID:</td>
+			<td><input type="text" name="userId" value=""/></td>
+		</tr>
+
+		<tr>
+			<td align="right">名前:</td>
+			<td><input type="text" name="username" value=""/></td>
+		</tr>
+
+		<tr>
+			<td align="right">生年月日:</td>
+			<td><input type="text" name="birthDay" value=""/></td>
+		</tr>
+		
+		<tr>
+			<td align="right">住所:</td>
+			<td><input type="text" name="address" value=""/></td>
+		</tr>
+		
+		<tr>
+			<td align="right">電話番号:</td>
+			<td><input type="text" name="telNum" value=""/></td>
+		</tr>						
+
+		<tr>
+			<td align="right">権限:</td>
+			<td>
+				<input type="checkbox" name="roles" value="1">ADMIN <!-- MEMO value: 送信される値 -->
+				<input type="checkbox" name="roles" value="2">USER
+			</td>
+		</tr>
+				
+		<tr>
+			<td align="right">パスワード:</td>
+			<td><input type="password" name="password" /></td>
+		</tr>		
+
+		<tr>
+			<td align="right">パスワード確認:</td>
+			<td><input type="password" name="confirmPassword" /></td>
+		</tr>
+				
+	</table>
+	
+	<input type="submit" name="confirm" value="登録"/>
+</form>
+</div>
+
+
+<%@include file="/WEB-INF/views/common/footer.jsp"%>
